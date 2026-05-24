@@ -183,6 +183,7 @@ const projects: Project[] = [
       "/images/cruise-platform-13.jpg",
       "/images/cruise-platform-14.jpg",
     ],
+    liveUrl: "https://cabinselect.com/",
     highlights: [
       "Multi-sailing event management with dedicated landing pages and guest booking portals per event",
       "Cabin inventory system with manual upload, deck plan display, and statuses: available, held, sold, assigned, blocked",

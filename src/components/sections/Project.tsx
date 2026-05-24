@@ -69,7 +69,6 @@ const projects: Project[] = [
       "/images/rebux-3.jpg",
       "/images/rebux-4.jpg",
     ],
-    liveUrl: "https://rebux.ca",
     highlights: [
       "Interactive rebate calculator showing real-time buyer savings estimates",
       "Multi-step lead form with Google Places autocomplete for address entry",

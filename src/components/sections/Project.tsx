@@ -645,10 +645,11 @@ function ProjectModal({
         onClick={onClose}
       />
 
-      {/* Modal panel */}
-      <div className="relative w-full max-w-6xl max-h-[92vh] overflow-y-auto bg-card border border-border/60 rounded-2xl shadow-2xl shadow-black/50 z-10">
-        {/* Sticky header bar */}
-        <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 border-b border-border/50 bg-card/96 backdrop-blur-sm">
+      {/* Modal panel — flex column, no single scroll; each column scrolls independently on lg */}
+      <div className="relative w-full max-w-6xl max-h-[92vh] bg-card border border-border/60 rounded-2xl shadow-2xl shadow-black/50 z-10 flex flex-col overflow-hidden">
+
+        {/* Header — always pinned at top (parent doesn't scroll) */}
+        <div className="shrink-0 flex items-center justify-between px-6 py-4 border-b border-border/50 bg-card/96 backdrop-blur-sm z-20">
           <div className="flex items-center gap-3 min-w-0">
             <button
               onClick={onPrev}
@@ -716,10 +717,13 @@ function ProjectModal({
           </div>
         </div>
 
-        {/* Two-column body */}
-        <div className="flex flex-col lg:flex-row lg:items-start">
-          {/* LEFT - project details */}
-          <div className="lg:w-[35%] flex flex-col border-b lg:border-b-0 lg:border-r border-border/40 p-6 gap-6 shrink-0 lg:sticky lg:top-[57px]">
+        {/* Two-column body
+            Mobile: single scroll (overflow-y-auto, columns stacked)
+            Desktop lg: overflow-hidden — each column scrolls independently */}
+        <div className="flex-1 overflow-y-auto lg:overflow-hidden flex flex-col lg:flex-row lg:items-stretch min-h-0">
+
+          {/* LEFT — independent scroll on desktop */}
+          <div className="lg:w-[35%] flex flex-col border-b lg:border-b-0 lg:border-r border-border/40 p-6 gap-6 shrink-0 lg:overflow-y-auto lg:min-h-0">
             <div>
               <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/45 mb-1.5">
                 My Role
@@ -806,8 +810,8 @@ function ProjectModal({
             </div>
           </div>
 
-          {/* RIGHT - screenshots */}
-          <div className="flex-1 flex flex-col">
+          {/* RIGHT — independent scroll on desktop (images + more projects) */}
+          <div className="flex-1 flex flex-col lg:overflow-y-auto lg:min-h-0">
             <div className="p-4 space-y-3">
               {project.images && project.images.length > 0 ? (
                 project.images.map((src, i) => (
@@ -1202,8 +1206,8 @@ export function Project({
                   data-filter={cat.slug}
                   onClick={() => handleCategoryChange(cat.slug)}
                   className={`px-3.5 py-1.5 rounded-lg text-[12px] font-mono font-medium transition-all ${activeCategory === cat.slug && !searchQuery
-                      ? "bg-primary/15 text-primary border border-primary/25"
-                      : "text-muted-foreground/65 hover:text-foreground hover:bg-white/[0.04] border border-transparent"
+                    ? "bg-primary/15 text-primary border border-primary/25"
+                    : "text-muted-foreground/65 hover:text-foreground hover:bg-white/[0.04] border border-transparent"
                     }`}
                 >
                   {cat.name}
@@ -1217,16 +1221,16 @@ export function Project({
                   )
                 }
                 className={`px-3.5 py-1.5 rounded-lg text-[12px] font-mono font-medium transition-all flex items-center gap-1.5 ${activeCategory === "saved" && !searchQuery
-                    ? "bg-amber-500/15 text-amber-400 border border-amber-500/25"
-                    : "text-muted-foreground/65 hover:text-amber-400/80 hover:bg-amber-500/10 border border-transparent"
+                  ? "bg-amber-500/15 text-amber-400 border border-amber-500/25"
+                  : "text-muted-foreground/65 hover:text-amber-400/80 hover:bg-amber-500/10 border border-transparent"
                   }`}
               >
                 <ThumbsUp className="w-3 h-3" />
                 Saved
                 <span
                   className={`inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-bold leading-none ${activeCategory === "saved" && !searchQuery
-                      ? "bg-amber-400/25 text-amber-300"
-                      : "bg-white/[0.07] text-muted-foreground/50"
+                    ? "bg-amber-400/25 text-amber-300"
+                    : "bg-white/[0.07] text-muted-foreground/50"
                     }`}
                 >
                   {recommended.size}

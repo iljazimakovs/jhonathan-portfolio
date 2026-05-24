@@ -914,7 +914,7 @@ export function Project({
   }, [initialCategory]);
 
   useEffect(() => {
-    setVisibleCount(12);
+    setVisibleCount(3);
   }, [searchQuery]);
 
   useEffect(() => {
@@ -975,24 +975,19 @@ export function Project({
     }
   };
 
-  const MAX_POOL = 16;
-
-  const savedList = Array.from(recommended)
-    .map((slug) => projects.find((p) => p.slug === slug))
-    .filter((p): p is Project => p !== undefined);
-
-  const nonSavedList = projects.filter((p) => !recommended.has(p.slug));
-
-  const displayPool = [
-    ...savedList,
-    ...nonSavedList.slice(0, Math.max(0, MAX_POOL - savedList.length)),
-  ];
+  // First 12 projects are the normal "All" pool reachable via load more
+  const BASE_LIMIT = 12;
+  const regularPool = projects.slice(0, BASE_LIMIT);
+  // Saved projects beyond index 12 are pinned to the top of "All"
+  const savedBeyondBase = projects
+    .slice(BASE_LIMIT)
+    .filter((p) => recommended.has(p.slug));
 
   const categoryFiltered =
     activeCategory === "saved"
-      ? savedList
+      ? projects.filter((p) => recommended.has(p.slug))
       : activeCategory === "all"
-        ? displayPool
+        ? [...savedBeyondBase, ...regularPool]
         : projects.filter((p) => p.filterSlugs.includes(activeCategory));
 
   const rawFiltered = searchQuery.trim()
@@ -1011,7 +1006,7 @@ export function Project({
       })
     : categoryFiltered;
 
-  // Deduplicate by slug to prevent duplicate key React warnings
+  // Deduplicate by slug
   const seenSlugs = new Set<string>();
   const filteredProjects = rawFiltered.filter((p) => {
     if (seenSlugs.has(p.slug)) return false;
@@ -1019,9 +1014,34 @@ export function Project({
     return true;
   });
 
+  // Pool controlled by visibleCount / load more (excludes always-visible pinned items)
+  const loadMorePool =
+    activeCategory === "all"
+      ? regularPool
+      : activeCategory === "saved"
+        ? []
+        : filteredProjects;
+
+  // What is actually rendered in the grid
+  const visibleProjects =
+    activeCategory === "saved"
+      ? filteredProjects
+      : searchQuery.trim()
+        ? filteredProjects
+        : activeCategory === "all"
+          ? [...savedBeyondBase, ...regularPool.slice(0, visibleCount)]
+          : filteredProjects.slice(0, visibleCount);
+
+  // Show load more only when not saved, not searching, cap not yet reached, and more items exist
+  const showLoadMore =
+    activeCategory !== "saved" &&
+    !searchQuery.trim() &&
+    visibleCount < BASE_LIMIT &&
+    loadMorePool.length > visibleCount;
+
   const handleCategoryChange = (slug: string) => {
     setActiveCategory(slug);
-    setVisibleCount(12);
+    setVisibleCount(3);
     setSearchQuery("");
     if (slug === "saved") {
       if (recommended.size > 0)
@@ -1105,10 +1125,7 @@ export function Project({
                 data-input="search-projects"
                 type="text"
                 value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  setVisibleCount(12);
-                }}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search projects…"
                 className="w-full sm:w-56 pl-9 pr-8 py-2 rounded-xl text-[13px] font-mono bg-white/[0.035] border border-white/[0.07] text-foreground placeholder:text-muted-foreground/35 focus:outline-none focus:border-primary/40 focus:bg-white/[0.05] transition-all"
               />
@@ -1196,7 +1213,7 @@ export function Project({
 
         {/* Project grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredProjects.slice(0, visibleCount).map((project) => (
+          {visibleProjects.map((project) => (
             <ProjectCard
               key={project.slug}
               project={project}
@@ -1221,16 +1238,16 @@ export function Project({
         )}
 
         {/* Load more */}
-        {filteredProjects.length > visibleCount && (
+        {showLoadMore && (
           <div className="flex justify-center mt-10">
             <button
-              onClick={() => setVisibleCount((v) => v + 3)}
+              onClick={() => setVisibleCount((v) => Math.min(BASE_LIMIT, v + 3))}
               data-action="load-more"
               className="px-6 py-2.5 rounded-xl border border-white/[0.07] bg-white/[0.025] text-[13px] font-mono font-medium text-muted-foreground/65 hover:border-primary/30 hover:text-foreground hover:bg-white/[0.04] transition-all"
             >
-              Load {Math.min(3, filteredProjects.length - visibleCount)} more
+              Load {Math.min(3, loadMorePool.length - visibleCount)} more
               <span className="ml-2 text-muted-foreground/30">
-                ({filteredProjects.length - visibleCount} remaining)
+                ({Math.min(loadMorePool.length, BASE_LIMIT) - visibleCount} remaining)
               </span>
             </button>
           </div>

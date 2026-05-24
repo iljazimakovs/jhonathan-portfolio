@@ -399,7 +399,7 @@ export function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="https://github.com/users/alonso-fernandez"
+                href="https://github.com/jhonathan-humnel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl border border-primary/35 text-primary font-semibold text-[14px] hover:bg-primary/[0.08] hover:border-primary/55 transition-all"

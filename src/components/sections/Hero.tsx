@@ -49,7 +49,7 @@ function OrbitalDiagram() {
   return (
     <svg
       viewBox="0 0 500 500"
-      className="w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] xl:max-w-[540px]"
+      className="w-full max-w-full sm:max-w-[440px] lg:max-w-[480px] xl:max-w-[540px]"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -350,15 +350,15 @@ export function Hero() {
       />
 
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-6 lg:px-10 py-28 lg:py-0 grid lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_540px] gap-10 xl:gap-14 items-center">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-20 sm:py-24 lg:py-0 grid lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_540px] gap-8 xl:gap-14 items-center">
 
           {/* ── LEFT ── */}
-          <div className="flex flex-col" style={{ animation: "amFadeUp 0.55s ease both" }}>
+          <div className="flex flex-col min-w-0" style={{ animation: "amFadeUp 0.55s ease both" }}>
 
             {/* headline */}
             <h1
-              className="font-display font-bold leading-[1.05] tracking-tight mb-6"
-              style={{ fontSize: "clamp(2rem, 3.6vw, 3.8rem)" }}
+              className="font-display font-bold leading-[1.05] tracking-tight mb-5 sm:mb-6 break-words"
+              style={{ fontSize: "clamp(1.65rem, 6vw, 3.8rem)" }}
               data-am-el="headline"
             >
               <span className="block text-foreground">Senior Full-Stack</span>
@@ -399,7 +399,7 @@ export function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="https://github.com/jhonathan-humnel"
+                href="https://github.com/users/alonso-fernandez"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl border border-primary/35 text-primary font-semibold text-[14px] hover:bg-primary/[0.08] hover:border-primary/55 transition-all"
@@ -411,22 +411,22 @@ export function Hero() {
             </div>
 
             {/* stats strip */}
-            <div className="flex items-stretch rounded-xl border border-white/[0.08] bg-white/[0.03] w-fit overflow-hidden">
+            <div className="grid grid-cols-2 sm:grid-cols-4 w-full sm:w-fit rounded-xl border border-white/[0.08] bg-white/[0.03] overflow-hidden">
               {[
-                { value: "10+", label: "Years Exp." },
-                { value: "50+", label: "Apps Shipped" },
-                { value: "15+", label: "Clients" },
-                { value: "3wk", label: "Avg. MVP" },
-              ].map((s, i) => (
+                { value: "10+", label: "Years Exp.",   br: "border-r border-b sm:border-b-0 border-white/[0.08]" },
+                { value: "50+", label: "Apps Shipped", br: "border-b sm:border-b-0 sm:border-r border-white/[0.08]" },
+                { value: "15+", label: "Clients",      br: "border-r border-white/[0.08]" },
+                { value: "3wk", label: "Avg. MVP",     br: "" },
+              ].map((s) => (
                 <div
                   key={s.label}
-                  className={`flex flex-col items-center justify-center px-5 py-3.5 ${i < 3 ? "border-r border-white/[0.08]" : ""}`}
+                  className={`flex flex-col items-center justify-center px-4 sm:px-5 py-3.5 ${s.br}`}
                   data-am-metric={s.label.toLowerCase().replace(/[\s.]/g, "-")}
                 >
-                  <span className="block text-[22px] font-display font-bold text-foreground leading-none mb-1">
+                  <span className="block text-[20px] sm:text-[22px] font-display font-bold text-foreground leading-none mb-1">
                     {s.value}
                   </span>
-                  <span className="text-[11px] font-mono text-muted-foreground/60 uppercase tracking-[0.14em] whitespace-nowrap">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-muted-foreground/60 uppercase tracking-[0.14em] whitespace-nowrap">
                     {s.label}
                   </span>
                 </div>
@@ -436,7 +436,7 @@ export function Hero() {
 
           {/* ── RIGHT - orbital diagram ── */}
           <div
-            className="flex items-center justify-center mt-10 lg:mt-0"
+            className="flex items-center justify-center mt-4 sm:mt-8 lg:mt-0 min-w-0 w-full overflow-hidden"
             style={{ animation: "amFadeUp 0.6s ease 0.15s both" }}
             data-am-el="orbital-diagram"
           >

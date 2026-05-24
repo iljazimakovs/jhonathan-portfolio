@@ -645,11 +645,11 @@ function ProjectModal({
         onClick={onClose}
       />
 
-      {/* Modal panel — flex column, no single scroll; each column scrolls independently on lg */}
-      <div className="relative w-full max-w-6xl max-h-[92vh] bg-card border border-border/60 rounded-2xl shadow-2xl shadow-black/50 z-10 flex flex-col overflow-hidden">
+      {/* Modal panel — single scroll for everything except images */}
+      <div className="relative w-full max-w-6xl max-h-[92vh] overflow-y-auto bg-card border border-border/60 rounded-2xl shadow-2xl shadow-black/50 z-10">
 
-        {/* Header — always pinned at top (parent doesn't scroll) */}
-        <div className="shrink-0 flex items-center justify-between px-6 py-4 border-b border-border/50 bg-card/96 backdrop-blur-sm z-20">
+        {/* Sticky header */}
+        <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 border-b border-border/50 bg-card/96 backdrop-blur-sm">
           <div className="flex items-center gap-3 min-w-0">
             <button
               onClick={onPrev}
@@ -717,13 +717,11 @@ function ProjectModal({
           </div>
         </div>
 
-        {/* Two-column body
-            Mobile: single scroll (overflow-y-auto, columns stacked)
-            Desktop lg: overflow-hidden — each column scrolls independently */}
-        <div className="flex-1 overflow-y-auto lg:overflow-hidden flex flex-col lg:flex-row lg:items-stretch min-h-0">
+        {/* Two-column body */}
+        <div className="flex flex-col lg:flex-row lg:items-start">
 
-          {/* LEFT — independent scroll on desktop */}
-          <div className="lg:w-[35%] flex flex-col border-b lg:border-b-0 lg:border-r border-border/40 p-6 gap-6 shrink-0 lg:overflow-y-auto lg:min-h-0">
+          {/* LEFT — no longer sticky; scrolls with the modal */}
+          <div className="lg:w-[35%] flex flex-col border-b lg:border-b-0 lg:border-r border-border/40 p-6 gap-6 shrink-0">
             <div>
               <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/45 mb-1.5">
                 My Role
@@ -810,9 +808,9 @@ function ProjectModal({
             </div>
           </div>
 
-          {/* RIGHT — independent scroll on desktop (images + more projects) */}
-          <div className="flex-1 flex flex-col lg:overflow-y-auto lg:min-h-0">
-            <div className="p-4 space-y-3">
+          {/* RIGHT — images only; sticky panel with its own scroll on desktop */}
+          <div className="flex-1">
+            <div className="p-4 space-y-3 lg:sticky lg:top-[57px] lg:max-h-[calc(92vh-57px)] lg:overflow-y-auto">
               {project.images && project.images.length > 0 ? (
                 project.images.map((src, i) => (
                   <ModalImage
@@ -831,73 +829,74 @@ function ProjectModal({
                 </div>
               )}
             </div>
-
-            {/* More Projects carousel */}
-            <div className="border-t border-border/40 px-4 pt-5 pb-6">
-              <p className="text-[13px] font-semibold text-foreground/80 mb-4">
-                More Projects
-              </p>
-              <div className="relative flex items-center gap-2">
-                <button
-                  onClick={() => setOtherOffset((o) => Math.max(0, o - 1))}
-                  disabled={!canGoPrev}
-                  className="shrink-0 flex items-center justify-center w-9 h-9 rounded-full border border-border/50 bg-card text-muted-foreground hover:bg-muted/50 hover:text-foreground disabled:opacity-20 transition-all"
-                  aria-label="Previous projects"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <div className="flex-1 grid grid-cols-3 gap-3">
-                  {visibleOthers.map((p) => (
-                    <button
-                      key={p.slug}
-                      onClick={() => onSelect(p)}
-                      className="group text-left overflow-hidden hover:opacity-85 transition-opacity"
-                      data-related-project={p.slug}
-                    >
-                      <div
-                        className={`w-full aspect-[4/3] rounded-xl overflow-hidden ${p.images?.length ? "bg-black" : `bg-gradient-to-br ${p.gradient}`}`}
-                      >
-                        {p.images?.length ? (
-                          <img
-                            src={p.images[0]}
-                            alt={p.title}
-                            className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center">
-                            <div
-                              className="absolute inset-0 opacity-25"
-                              style={{
-                                backgroundImage:
-                                  "radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)",
-                                backgroundSize: "12px 12px",
-                              }}
-                            />
-                          </div>
-                        )}
-                      </div>
-                      <p className="mt-1.5 text-[11.5px] font-medium text-foreground/70 group-hover:text-primary transition-colors leading-snug line-clamp-2">
-                        {p.title}
-                      </p>
-                    </button>
-                  ))}
-                </div>
-                <button
-                  onClick={() =>
-                    setOtherOffset((o) =>
-                      Math.min(others.length - VISIBLE_OTHERS, o + 1),
-                    )
-                  }
-                  disabled={!canGoNext}
-                  className="shrink-0 flex items-center justify-center w-9 h-9 rounded-full border border-border/50 bg-card text-muted-foreground hover:bg-muted/50 hover:text-foreground disabled:opacity-20 transition-all"
-                  aria-label="Next projects"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
           </div>
         </div>
+
+        {/* More Projects — full-width, scrolls with the modal */}
+        <div className="border-t border-border/40 px-4 pt-5 pb-6">
+          <p className="text-[13px] font-semibold text-foreground/80 mb-4">
+            More Projects
+          </p>
+          <div className="relative flex items-center gap-2">
+            <button
+              onClick={() => setOtherOffset((o) => Math.max(0, o - 1))}
+              disabled={!canGoPrev}
+              className="shrink-0 flex items-center justify-center w-9 h-9 rounded-full border border-border/50 bg-card text-muted-foreground hover:bg-muted/50 hover:text-foreground disabled:opacity-20 transition-all"
+              aria-label="Previous projects"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <div className="flex-1 grid grid-cols-3 gap-3">
+              {visibleOthers.map((p) => (
+                <button
+                  key={p.slug}
+                  onClick={() => onSelect(p)}
+                  className="group text-left overflow-hidden hover:opacity-85 transition-opacity"
+                  data-related-project={p.slug}
+                >
+                  <div
+                    className={`w-full aspect-[4/3] rounded-xl overflow-hidden ${p.images?.length ? "bg-black" : `bg-gradient-to-br ${p.gradient}`}`}
+                  >
+                    {p.images?.length ? (
+                      <img
+                        src={p.images[0]}
+                        alt={p.title}
+                        className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div
+                          className="absolute inset-0 opacity-25"
+                          style={{
+                            backgroundImage:
+                              "radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)",
+                            backgroundSize: "12px 12px",
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <p className="mt-1.5 text-[11.5px] font-medium text-foreground/70 group-hover:text-primary transition-colors leading-snug line-clamp-2">
+                    {p.title}
+                  </p>
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={() =>
+                setOtherOffset((o) =>
+                  Math.min(others.length - VISIBLE_OTHERS, o + 1),
+                )
+              }
+              disabled={!canGoNext}
+              className="shrink-0 flex items-center justify-center w-9 h-9 rounded-full border border-border/50 bg-card text-muted-foreground hover:bg-muted/50 hover:text-foreground disabled:opacity-20 transition-all"
+              aria-label="Next projects"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   );

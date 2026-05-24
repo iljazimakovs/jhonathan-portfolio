@@ -189,7 +189,11 @@ const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
     tags: ["Landing Page", "UI/UX", "CRO", "SaaS"],
     gradient: "from-green-600/20 to-emerald-600/20",
-    images: ["/images/regex-1.jpg", "/images/regex-2.jpg", "/images/regex-3.jpg"],
+    images: [
+      "/images/regex-1.jpg",
+      "/images/regex-2.jpg",
+      "/images/regex-3.jpg",
+    ],
     highlights: [
       "Dark-themed design with green accent palette engineered for maximum conversion",
       "Problem-agitation hero section with trust indicators - ratings, user counts, deal volume",
@@ -993,18 +997,18 @@ export function Project({
 
   const rawFiltered = searchQuery.trim()
     ? projects.filter((p) => {
-      const q = searchQuery.toLowerCase();
-      return (
-        p.title.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.longDescription.toLowerCase().includes(q) ||
-        p.highlight.toLowerCase().includes(q) ||
-        p.tech.some((t) => t.toLowerCase().includes(q)) ||
-        p.tags.some((t) => t.toLowerCase().includes(q)) ||
-        p.highlights.some((h) => h.toLowerCase().includes(q))
-      );
-    })
+        const q = searchQuery.toLowerCase();
+        return (
+          p.title.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.longDescription.toLowerCase().includes(q) ||
+          p.highlight.toLowerCase().includes(q) ||
+          p.tech.some((t) => t.toLowerCase().includes(q)) ||
+          p.tags.some((t) => t.toLowerCase().includes(q)) ||
+          p.highlights.some((h) => h.toLowerCase().includes(q))
+        );
+      })
     : categoryFiltered;
 
   // Deduplicate by slug to prevent duplicate key React warnings
@@ -1131,10 +1135,11 @@ export function Project({
                   key={cat.slug}
                   data-filter={cat.slug}
                   onClick={() => handleCategoryChange(cat.slug)}
-                  className={`px-3.5 py-1.5 rounded-lg text-[12px] font-mono font-medium transition-all ${activeCategory === cat.slug && !searchQuery
+                  className={`px-3.5 py-1.5 rounded-lg text-[12px] font-mono font-medium transition-all ${
+                    activeCategory === cat.slug && !searchQuery
                       ? "bg-primary/15 text-primary border border-primary/25"
                       : "text-muted-foreground/65 hover:text-foreground hover:bg-white/[0.04] border border-transparent"
-                    }`}
+                  }`}
                 >
                   {cat.name}
                 </button>
@@ -1146,18 +1151,20 @@ export function Project({
                     activeCategory === "saved" ? "all" : "saved",
                   )
                 }
-                className={`px-3.5 py-1.5 rounded-lg text-[12px] font-mono font-medium transition-all flex items-center gap-1.5 ${activeCategory === "saved" && !searchQuery
+                className={`px-3.5 py-1.5 rounded-lg text-[12px] font-mono font-medium transition-all flex items-center gap-1.5 ${
+                  activeCategory === "saved" && !searchQuery
                     ? "bg-amber-500/15 text-amber-400 border border-amber-500/25"
                     : "text-muted-foreground/65 hover:text-amber-400/80 hover:bg-amber-500/10 border border-transparent"
-                  }`}
+                }`}
               >
                 <ThumbsUp className="w-3 h-3" />
                 Saved
                 <span
-                  className={`inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-bold leading-none ${activeCategory === "saved" && !searchQuery
+                  className={`inline-flex items-center justify-center w-4 h-4 rounded-full text-[9px] font-bold leading-none ${
+                    activeCategory === "saved" && !searchQuery
                       ? "bg-amber-400/25 text-amber-300"
                       : "bg-white/[0.07] text-muted-foreground/50"
-                    }`}
+                  }`}
                 >
                   {recommended.size}
                 </span>

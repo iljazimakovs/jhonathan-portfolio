@@ -13,17 +13,6 @@ const certifications = [
     tags: ["JavaScript", "Async Programming", "Closures", "Event Handling", "ES6+", "Subject Matter Expert"],
   },
   {
-    id: "aspnet-mvc",
-    badge: "/images/cert-edchart-aspnet.png",
-    title: "ASP.NET MVC Web Applications Developer",
-    issuer: "EdChart",
-    level: "Subject Matter Expert",
-    year: "2024",
-    description:
-      "Globally recognized credential validating expertise in building scalable, secure, and responsive web applications using Microsoft's ASP.NET MVC framework. Assesses skills in routing, controllers, Razor views, Entity Framework, and more. Digital badge issued via Credly.",
-    tags: ["ASP.NET MVC", "C#", "Entity Framework", "Razor Views", "Routing", "Microsoft"],
-  },
-  {
     id: "coursera-python-ai",
     badge: "/images/cert-coursera-python.png",
     title: "Python for Everybody Specialization",
@@ -33,6 +22,17 @@ const certifications = [
     description:
       "Comprehensive specialization covering Python fundamentals, data structures, accessing web data, databases, and data visualization. Builds a strong foundation in Python programming for data-driven and AI-powered application development.",
     tags: ["Python", "Data Structures", "Web APIs", "SQL", "Data Visualization"],
+  },
+  {
+    id: "aspnet-mvc",
+    badge: "/images/cert-edchart-aspnet.png",
+    title: "ASP.NET MVC Web Applications Developer",
+    issuer: "EdChart",
+    level: "Subject Matter Expert",
+    year: "2024",
+    description:
+      "Globally recognized credential validating expertise in building scalable, secure, and responsive web applications using Microsoft's ASP.NET MVC framework. Assesses skills in routing, controllers, Razor views, Entity Framework, and more. Digital badge issued via Credly.",
+    tags: ["ASP.NET MVC", "C#", "Entity Framework", "Razor Views", "Routing", "Microsoft"],
   },
   {
     id: "coursera-ai",

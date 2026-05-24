@@ -1,7 +1,7 @@
 import { Github } from "lucide-react";
 
 const socialLinks = [
-  { label: "GitHub", icon: Github, href: "https://github.com/users/alonso-fernandez", target: "_blank" },
+  { label: "GitHub", icon: Github, href: "https://github.com/jhonathan-humnel", target: "_blank" },
 ];
 
 const navCols = [

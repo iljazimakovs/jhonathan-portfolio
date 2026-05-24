@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1c1832"/>
+      <stop offset="100%" stop-color="#0e0c1a"/>
+    </linearGradient>
+    <linearGradient id="vgrad" x1="0" y1="0" x2="0" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a08dfc"/>
+      <stop offset="100%" stop-color="#6c52f5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="url(#bg)"/>
+
+  <!-- Subtle border -->
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.5" stroke="#7C65F8" stroke-opacity="0.25" stroke-width="0.75"/>
+
+  <!-- J — violet accent -->
+  <text
+    x="5"
+    y="22"
+    font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800"
+    font-size="15"
+    fill="url(#vgrad)"
+  >J</text>
+
+  <!-- H — light foreground -->
+  <text
+    x="16"
+    y="22"
+    font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-weight="800"
+    font-size="15"
+    fill="#ddd8f8"
+  >H</text>
+</svg>

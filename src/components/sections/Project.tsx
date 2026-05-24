@@ -64,10 +64,10 @@ const projects: Project[] = [
     tags: ["Landing Page", "Lead Generation", "Real Estate", "CRO"],
     gradient: "from-blue-600/20 to-cyan-600/20",
     images: [
-      "/images/rebux-1.png",
-      "/images/rebux-2.png",
-      "/images/rebux-3.png",
-      "/images/rebux-4.png",
+      "/images/rebux-1.jpg",
+      "/images/rebux-2.jpg",
+      "/images/rebux-3.jpg",
+      "/images/rebux-4.jpg",
     ],
     liveUrl: "https://rebux.ca",
     highlights: [
@@ -102,10 +102,10 @@ const projects: Project[] = [
     tags: ["SaaS", "CRM", "Stripe", "Trade"],
     gradient: "from-blue-600/20 to-indigo-600/20",
     images: [
-      "/images/jobnix-1.png",
-      "/images/jobnix-2.png",
-      "/images/jobnix-3.png",
-      "/images/jobnix-4.png",
+      "/images/jobnix-1.jpg",
+      "/images/jobnix-2.jpg",
+      "/images/jobnix-3.jpg",
+      "/images/jobnix-4.jpg",
     ],
     highlights: [
       "Itemized quote builder with real-time line item calculation and PDF export",
@@ -131,10 +131,10 @@ const projects: Project[] = [
     tags: ["Healthcare", "HIPAA", "SaaS", "Forms"],
     gradient: "from-teal-600/20 to-emerald-600/20",
     images: [
-      "/images/patient-intake-2.png",
-      "/images/patient-intake-1.png",
-      "/images/patient-intake-3.png",
-      "/images/patient-intake-4.png",
+      "/images/patient-intake-2.jpg",
+      "/images/patient-intake-1.jpg",
+      "/images/patient-intake-3.jpg",
+      "/images/patient-intake-4.jpg",
     ],
     liveUrl: "https://patient-intake-form.vercel.app/intake/demo",
     highlights: [
@@ -166,7 +166,7 @@ const projects: Project[] = [
     ],
     tags: ["AI", "Image Generation", "SaaS", "Home"],
     gradient: "from-green-600/20 to-teal-600/20",
-    images: ["/images/loftie-1.png"],
+    images: ["/images/loftie-1.jpg"],
     highlights: [
       "Drag-and-drop image upload with real-time preview before submission",
       "Google Gemini 2.0 Flash for AI vision analysis and photorealistic room transformation",
@@ -224,10 +224,10 @@ const projects: Project[] = [
     gradient: "from-violet-600/20 to-purple-600/20",
     liveUrl: "https://design-system-creator-fawn.vercel.app/demo",
     images: [
-      "/images/brandos-1.png",
-      "/images/brandos-2.png",
-      "/images/brandos-3.png",
-      "/images/brandos-4.png",
+      "/images/brandos-1.jpg",
+      "/images/brandos-2.jpg",
+      "/images/brandos-3.jpg",
+      "/images/brandos-4.jpg",
     ],
     highlights: [
       "AI consultant (GPT & Claude) guides users through brand strategy via natural conversation",
@@ -253,12 +253,12 @@ const projects: Project[] = [
     tags: ["Sports", "Real-Time", "Frontend", "UI/UX"],
     gradient: "from-orange-600/20 to-amber-600/20",
     images: [
-      "/images/scorebug-1.png",
-      "/images/scorebug-2.png",
-      "/images/scorebug-3.png",
-      "/images/scorebug-4.png",
-      "/images/scorebug-5.png",
-      "/images/scorebug-6.png",
+      "/images/scorebug-1.jpg",
+      "/images/scorebug-2.jpg",
+      "/images/scorebug-3.jpg",
+      "/images/scorebug-4.jpg",
+      "/images/scorebug-5.jpg",
+      "/images/scorebug-6.jpg",
     ],
     highlights: [
       "Real-time scoreboard with click-to-increment stats and animated score feedback",
@@ -292,9 +292,9 @@ const projects: Project[] = [
     tags: ["SaaS", "CRM", "Real Estate", "Stripe"],
     gradient: "from-blue-600/20 to-indigo-600/20",
     images: [
-      "/images/regex-crm-1.png",
-      "/images/regex-crm-2.png",
-      "/images/regex-crm-3.png",
+      "/images/regex-crm-1.jpg",
+      "/images/regex-crm-2.jpg",
+      "/images/regex-crm-3.jpg",
     ],
     highlights: [
       "Kanban-style lead pipeline with stages: New Lead, Contacted, Qualified, Offer Sent, Under Contract, Closed",
@@ -328,7 +328,7 @@ const projects: Project[] = [
     tags: ["Real Estate", "Web Design", "Brand Identity", "Webflow"],
     gradient: "from-yellow-600/20 to-amber-600/20",
     liveUrl: "https://drazinvestments.com/",
-    images: ["/images/draz-1.png", "/images/draz-2.png", "/images/draz-3.png"],
+    images: ["/images/draz-1.jpg", "/images/draz-2.jpg", "/images/draz-3.jpg"],
     highlights: [
       "Brand identity and messaging strategy - crafted core value proposition for luxury real estate audience",
       "Visual-first design with full-screen photography to showcase luxury properties",
@@ -361,10 +361,10 @@ const projects: Project[] = [
     tags: ["Landing Page", "Lead Generation", "Real Estate", "CRO"],
     gradient: "from-blue-600/20 to-cyan-600/20",
     images: [
-      "/images/rebux-1.png",
-      "/images/rebux-2.png",
-      "/images/rebux-3.png",
-      "/images/rebux-4.png",
+      "/images/rebux-1.jpg",
+      "/images/rebux-2.jpg",
+      "/images/rebux-3.jpg",
+      "/images/rebux-4.jpg",
     ],
     liveUrl: "https://rebux.ca",
     highlights: [
@@ -399,10 +399,10 @@ const projects: Project[] = [
     tags: ["SaaS", "CRM", "Stripe", "Trade"],
     gradient: "from-blue-600/20 to-indigo-600/20",
     images: [
-      "/images/jobnix-1.png",
-      "/images/jobnix-2.png",
-      "/images/jobnix-3.png",
-      "/images/jobnix-4.png",
+      "/images/jobnix-1.jpg",
+      "/images/jobnix-2.jpg",
+      "/images/jobnix-3.jpg",
+      "/images/jobnix-4.jpg",
     ],
     highlights: [
       "Itemized quote builder with real-time line item calculation and PDF export",
@@ -428,10 +428,10 @@ const projects: Project[] = [
     tags: ["Healthcare", "HIPAA", "SaaS", "Forms"],
     gradient: "from-teal-600/20 to-emerald-600/20",
     images: [
-      "/images/patient-intake-2.png",
-      "/images/patient-intake-1.png",
-      "/images/patient-intake-3.png",
-      "/images/patient-intake-4.png",
+      "/images/patient-intake-2.jpg",
+      "/images/patient-intake-1.jpg",
+      "/images/patient-intake-3.jpg",
+      "/images/patient-intake-4.jpg",
     ],
     liveUrl: "https://patient-intake-form.vercel.app/intake/demo",
     highlights: [
@@ -463,7 +463,7 @@ const projects: Project[] = [
     ],
     tags: ["AI", "Image Generation", "SaaS", "Home"],
     gradient: "from-green-600/20 to-teal-600/20",
-    images: ["/images/loftie-1.png"],
+    images: ["/images/loftie-1.jpg"],
     highlights: [
       "Drag-and-drop image upload with real-time preview before submission",
       "Google Gemini 2.0 Flash for AI vision analysis and photorealistic room transformation",
@@ -487,7 +487,7 @@ const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
     tags: ["Landing Page", "UI/UX", "CRO", "SaaS"],
     gradient: "from-green-600/20 to-emerald-600/20",
-    images: ["/images/regex-1.png", "/images/regex-2.png", "/images/regex-3.png"],
+    images: ["/images/regex-1.jpg", "/images/regex-2.jpg", "/images/regex-3.jpg"],
     highlights: [
       "Dark-themed design with green accent palette engineered for maximum conversion",
       "Problem-agitation hero section with trust indicators - ratings, user counts, deal volume",
@@ -521,10 +521,10 @@ const projects: Project[] = [
     gradient: "from-violet-600/20 to-purple-600/20",
     liveUrl: "https://design-system-creator-fawn.vercel.app/demo",
     images: [
-      "/images/brandos-1.png",
-      "/images/brandos-2.png",
-      "/images/brandos-3.png",
-      "/images/brandos-4.png",
+      "/images/brandos-1.jpg",
+      "/images/brandos-2.jpg",
+      "/images/brandos-3.jpg",
+      "/images/brandos-4.jpg",
     ],
     highlights: [
       "AI consultant (GPT & Claude) guides users through brand strategy via natural conversation",
@@ -550,12 +550,12 @@ const projects: Project[] = [
     tags: ["Sports", "Real-Time", "Frontend", "UI/UX"],
     gradient: "from-orange-600/20 to-amber-600/20",
     images: [
-      "/images/scorebug-1.png",
-      "/images/scorebug-2.png",
-      "/images/scorebug-3.png",
-      "/images/scorebug-4.png",
-      "/images/scorebug-5.png",
-      "/images/scorebug-6.png",
+      "/images/scorebug-1.jpg",
+      "/images/scorebug-2.jpg",
+      "/images/scorebug-3.jpg",
+      "/images/scorebug-4.jpg",
+      "/images/scorebug-5.jpg",
+      "/images/scorebug-6.jpg",
     ],
     highlights: [
       "Real-time scoreboard with click-to-increment stats and animated score feedback",
@@ -589,9 +589,9 @@ const projects: Project[] = [
     tags: ["SaaS", "CRM", "Real Estate", "Stripe"],
     gradient: "from-blue-600/20 to-indigo-600/20",
     images: [
-      "/images/regex-crm-1.png",
-      "/images/regex-crm-2.png",
-      "/images/regex-crm-3.png",
+      "/images/regex-crm-1.jpg",
+      "/images/regex-crm-2.jpg",
+      "/images/regex-crm-3.jpg",
     ],
     highlights: [
       "Kanban-style lead pipeline with stages: New Lead, Contacted, Qualified, Offer Sent, Under Contract, Closed",
@@ -625,7 +625,7 @@ const projects: Project[] = [
     tags: ["Real Estate", "Web Design", "Brand Identity", "Webflow"],
     gradient: "from-yellow-600/20 to-amber-600/20",
     liveUrl: "https://drazinvestments.com/",
-    images: ["/images/draz-1.png", "/images/draz-2.png", "/images/draz-3.png"],
+    images: ["/images/draz-1.jpg", "/images/draz-2.jpg", "/images/draz-3.jpg"],
     highlights: [
       "Brand identity and messaging strategy - crafted core value proposition for luxury real estate audience",
       "Visual-first design with full-screen photography to showcase luxury properties",

@@ -108,10 +108,6 @@ const projects: Project[] = [
       "/images/autonomize-2.jpg",
       "/images/autonomize-3.jpg",
       "/images/autonomize-4.jpg",
-      "/images/autonomize-5.jpg",
-      "/images/autonomize-6.jpg",
-      "/images/autonomize-7.jpg",
-      "/images/autonomize-8.jpg",
     ],
     highlights: [
       "Agentic workflow orchestration across prior authorization, care management, claims, appeals, and clinical audits",

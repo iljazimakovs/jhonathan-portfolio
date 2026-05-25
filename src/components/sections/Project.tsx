@@ -80,15 +80,15 @@ const projects: Project[] = [
   },
   {
     slug: "autonomize-ai-platform",
-    title: "Autonomize AI – Intelligence Platform for Healthcare Operations",
+    title: "AI Intelligence Platform for Healthcare Operations",
     role: "Full-Stack Developer · AI Integration · Agentic Workflow Architecture · Healthcare SaaS Engineering",
     category: "AI",
     filterSlugs: ["ai", "saas", "fullstack"],
     highlight: "Healthcare AI Platform",
     description:
-      "AI-native healthcare intelligence platform - agentic workflow orchestration, deterministic rules engine, 50+ EHR connectors, and autonomous AI agents for clinical and operational automation at enterprise scale.",
+      "AI-native healthcare intelligence platform - agentic workflow orchestration, 50+ EHR connectors, and autonomous AI agents for clinical and operational automation at enterprise scale.",
     longDescription:
-      "Built and scaled an AI-native healthcare intelligence platform trusted by 3 of the 5 largest U.S. health enterprises. The platform replaces fragmented point solutions with a unified agentic workflow layer spanning prior authorization, care management, claims processing, appeals & grievances, and clinical audits. Core architecture includes a self-learning knowledge graph of 10M+ clinical, regulatory, and coverage concepts, a visual AI Studio for designing and versioning agentic workflows, a curated marketplace of 160+ ready-to-deploy agents, and a Command Center for real-time operational observability with full audit trails. Built with compliance embedded at every layer — not bolted on — with human-in-the-loop controls, HIPAA-grade security, and 50+ pre-built connectors for EHRs, FHIR APIs, claims systems, and legacy inputs.",
+      "Built an AI-native healthcare intelligence platform serving large U.S. health enterprises. The platform unifies fragmented point solutions into a single agentic workflow layer covering prior authorization, care management, claims processing, appeals & grievances, and clinical audits. Core architecture includes a self-learning knowledge graph of 10M+ clinical, regulatory, and coverage concepts, a visual AI Studio for designing and versioning agentic workflows, a curated marketplace of 160+ ready-to-deploy agents, and a Command Center for real-time operational observability with full audit trails. Compliance is embedded at every layer with human-in-the-loop controls, HIPAA-grade security, and 50+ pre-built connectors for EHRs, FHIR APIs, claims systems, and legacy inputs.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -102,12 +102,15 @@ const projects: Project[] = [
     ],
     tags: ["AI", "Healthcare", "Workflow Automation", "SaaS"],
     gradient: "from-violet-600/20 to-blue-600/20",
-    liveUrl: "https://www.autonomize.ai/",
     images: [
       "/images/autonomize-1.jpg",
       "/images/autonomize-2.jpg",
       "/images/autonomize-3.jpg",
       "/images/autonomize-4.jpg",
+      "/images/autonomize-5.jpg",
+      "/images/autonomize-6.jpg",
+      "/images/autonomize-7.jpg",
+      "/images/autonomize-8.jpg",
     ],
     highlights: [
       "Agentic workflow orchestration across prior authorization, care management, claims, appeals, and clinical audits",
@@ -115,7 +118,7 @@ const projects: Project[] = [
       "Visual AI Studio for designing, configuring, and versioning agentic workflows without sacrificing technical rigor",
       "Command Center with real-time KPI observability, full lifecycle tracing, and human-AI handoff audit trails",
       "160+ ready-to-deploy healthcare agents and workflows activating in days, not months",
-      "Trusted by 3 of the 5 largest U.S. health enterprises — 36,000 FTE clinical hours saved per month in production",
+      "Production-grade compliance with HIPAA-grade security, audit logging, and human-in-the-loop controls",
     ],
   },
   {

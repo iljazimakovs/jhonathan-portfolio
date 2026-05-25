@@ -122,6 +122,35 @@ const projects: Project[] = [
     ],
   },
   {
+    slug: "patient-intake-system",
+    title: "Patient Intake System",
+    role: "Full-Stack Developer",
+    category: "Full-Stack",
+    filterSlugs: ["fullstack", "saas"],
+    highlight: "HIPAA Healthcare App",
+    description:
+      "Full-stack patient intake platform for healthcare clinics - replaces paper forms with a secure, HIPAA-compliant digital solution with clinic dashboard.",
+    longDescription:
+      "Full-stack patient intake platform for healthcare clinics. Replaces paper forms with a secure digital solution. Patient side: multi-step form, insurance photo upload, e-signature, and auto-save. Clinic side: dashboard with submission list, search/filter, status tracking, PDF export, and audit logging. Built for HIPAA compliance with encryption and access controls.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "AWS S3", "Tailwind CSS"],
+    tags: ["Healthcare", "HIPAA", "SaaS", "Forms"],
+    gradient: "from-teal-600/20 to-emerald-600/20",
+    images: [
+      "/images/patient-intake-2.jpg",
+      "/images/patient-intake-1.jpg",
+      "/images/patient-intake-3.jpg",
+      "/images/patient-intake-4.jpg",
+    ],
+    liveUrl: "https://patient-intake-form.vercel.app/intake/demo",
+    highlights: [
+      "Multi-step patient form with auto-save, insurance photo upload, and e-signature",
+      "Clinic dashboard with submission list, search, filter by status, and date range",
+      "PDF export of completed intake forms for clinical records",
+      "Audit logging for all form access and status changes",
+      "Built for HIPAA compliance with encryption at rest and strict access controls",
+    ],
+  },
+  {
     slug: "jobnix-crm-platform",
     title: "Jobnix – Professional Quoting & CRM Platform for Trade Businesses",
     role: "Full-Stack Developer",
@@ -156,35 +185,6 @@ const projects: Project[] = [
       "Real-time dashboard showing revenue metrics, pending quotes, and acceptance rates",
       "Customer CRM with full quote history, contact details, and summary stats",
       "Automated email and SMS follow-ups via Resend and Twilio for outstanding quotes",
-    ],
-  },
-  {
-    slug: "patient-intake-system",
-    title: "Patient Intake System",
-    role: "Full-Stack Developer",
-    category: "Full-Stack",
-    filterSlugs: ["fullstack", "saas"],
-    highlight: "HIPAA Healthcare App",
-    description:
-      "Full-stack patient intake platform for healthcare clinics - replaces paper forms with a secure, HIPAA-compliant digital solution with clinic dashboard.",
-    longDescription:
-      "Full-stack patient intake platform for healthcare clinics. Replaces paper forms with a secure digital solution. Patient side: multi-step form, insurance photo upload, e-signature, and auto-save. Clinic side: dashboard with submission list, search/filter, status tracking, PDF export, and audit logging. Built for HIPAA compliance with encryption and access controls.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "AWS S3", "Tailwind CSS"],
-    tags: ["Healthcare", "HIPAA", "SaaS", "Forms"],
-    gradient: "from-teal-600/20 to-emerald-600/20",
-    images: [
-      "/images/patient-intake-2.jpg",
-      "/images/patient-intake-1.jpg",
-      "/images/patient-intake-3.jpg",
-      "/images/patient-intake-4.jpg",
-    ],
-    liveUrl: "https://patient-intake-form.vercel.app/intake/demo",
-    highlights: [
-      "Multi-step patient form with auto-save, insurance photo upload, and e-signature",
-      "Clinic dashboard with submission list, search, filter by status, and date range",
-      "PDF export of completed intake forms for clinical records",
-      "Audit logging for all form access and status changes",
-      "Built for HIPAA compliance with encryption at rest and strict access controls",
     ],
   },
   {

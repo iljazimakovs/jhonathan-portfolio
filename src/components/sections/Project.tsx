@@ -151,6 +151,13 @@ const projects: Project[] = [
       "/images/simplydepo-3.jpg",
       "/images/simplydepo-4.jpg",
       "/images/simplydepo-5.jpg",
+      "/images/simplydepo-5.jpg",
+      "/images/simplydepo-6.jpg",
+      "/images/simplydepo-7.jpg",
+      "/images/simplydepo-8.jpg",
+      "/images/simplydepo-9.jpg",
+      "/images/simplydepo-10.jpg",
+      "/images/simplydepo-11.jpg",
     ],
     liveUrl: "https://simplydepo.com/",
     highlights: [

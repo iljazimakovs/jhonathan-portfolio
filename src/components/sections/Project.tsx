@@ -148,7 +148,6 @@ const projects: Project[] = [
     images: [
       "/images/simplydepo-1.jpg",
       "/images/simplydepo-2.jpg",
-      "/images/simplydepo-3.jpg",
       "/images/simplydepo-4.jpg",
       "/images/simplydepo-5.jpg",
       "/images/simplydepo-6.jpg",

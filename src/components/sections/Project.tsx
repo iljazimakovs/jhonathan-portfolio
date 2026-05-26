@@ -197,10 +197,9 @@ const projects: Project[] = [
     images: [
       "/images/pitchbooking-1.jpg",
       "/images/pitchbooking-2.jpg",
-      "/images/pitchbooking-3.jpg",
-      "/images/pitchbooking-4.jpg",
       "/images/pitchbooking-5.jpg",
       "/images/pitchbooking-6.jpg",
+      "/images/pitchbooking-7.jpg",
     ],
     liveUrl: "https://pitchbooking.com/",
     highlights: [

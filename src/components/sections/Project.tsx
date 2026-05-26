@@ -178,9 +178,9 @@ const projects: Project[] = [
     filterSlugs: ["saas", "fullstack"],
     highlight: "Sports Facility SaaS",
     description:
-      "Multi-tenant sports facility booking platform serving 1,000+ facilities across the UK, Ireland and US - Google Calendar OAuth sync, Stripe payments, subscription block bookings, and a full manager dashboard with CRM.",
+      "Multi-tenant sports facility booking platform - Google Calendar OAuth sync across business accounts, Supabase edge function API proxy, online booking with payments, and a full manager dashboard with CRM.",
     longDescription:
-      "Built the Google Calendar integration and backend infrastructure for Pitchbooking, an award-winning scheduling and payments platform trusted by over 1,000 sports facilities including local councils, schools, universities, and private sports centres. The core engineering challenge was establishing and maintaining secure Google OAuth connections across hundreds of independent facility accounts, storing credentials via a Supabase edge function outbound proxy, and reliably syncing booking events into each facility's calendar without token expiry failures. The manager dashboard handles the full operational lifecycle - daily calendar views, block subscription bookings, priority access windows, Stripe payment reconciliation, invoicing, and role-based access for grounds teams, booking managers, and finance staff. The public-facing booking site gives customers 24/7 self-service access to find, book, and pay for facilities in real time.",
+      "Built the Google Calendar integration and backend infrastructure for Pitchbooking, a scheduling and payments platform for sports facilities. The core engineering challenge was establishing and maintaining secure Google OAuth connections across independent facility accounts, storing credentials via a Supabase edge function outbound proxy, and reliably syncing booking events into each facility's calendar without token expiry failures. The manager dashboard handles the full operational lifecycle — daily calendar views, block subscription bookings, priority access windows, Stripe payment reconciliation, invoicing, and role-based access for grounds teams, booking managers, and finance staff. The public-facing booking portal gives customers 24/7 self-service access to find, book, and pay for facilities in real time.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -203,12 +203,12 @@ const projects: Project[] = [
     ],
     liveUrl: "https://pitchbooking.com/",
     highlights: [
-      "Google OAuth 2.0 flow connecting hundreds of independent facility accounts with secure token storage via Supabase edge functions",
-      "Automatic token refresh logic eliminating silent OAuth expiry failures across all active facility connections",
+      "Google OAuth 2.0 flow connecting independent facility accounts with secure token storage via Supabase edge functions",
+      "Automatic token refresh logic preventing silent OAuth expiry failures across active facility connections",
       "Full Google Calendar CRUD — booking events created, updated, and deleted across facility and customer calendars in real time",
-      "Supabase edge function outbound proxy pattern for authenticated third-party API calls without plaintext credential exposure",
-      "Stripe payment integration supporting online pre-payment, invoicing, offline payments, cancellations, and automated reconciliation",
-      "Manager dashboard with daily calendar view, subscription block bookings, priority access windows, and role-based staff permissions",
+      "Supabase edge function outbound proxy for authenticated third-party API calls without plaintext credential exposure",
+      "Stripe integration supporting online pre-payment, invoicing, offline payments, cancellations, and payment reconciliation",
+      "Manager dashboard with daily calendar view, block subscription bookings, priority access windows, and role-based staff permissions",
     ],
   },
   {

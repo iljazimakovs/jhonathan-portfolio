@@ -21,14 +21,14 @@ const categories = [
     label: "Databases & ORM",
     skills: [
       "PostgreSQL", "MySQL", "Redis", "MongoDB",
-      "Drizzle ORM", "Prisma ORM", "Neon", "Supabase",
+      "Drizzle ORM", "Prisma ORM", "Neon", "Supabase", "Firebase",
     ],
   },
   {
     id: "ai",
     label: "AI & Integrations",
     skills: [
-      "OpenAI API", "Anthropic Claude", "Google Gemini",
+      "OpenAI API", "Anthropic Claude", "Google Gemini", "Google APIs",
       "LangChain", "RAG Architecture", "OpenClaw",
       "Pinecone", "Resend", "Twilio",
     ],
@@ -46,7 +46,7 @@ const categories = [
     label: "Payments & Quality",
     skills: [
       "Stripe", "Stripe Connect", "Stripe Billing",
-      "Cypress", "Jest", "Figma", "Linear", "Postman",
+      "Cypress", "Jest", "Figma", "Linear", "Postman", "Bubble", "Webflow",
     ],
   },
 ];

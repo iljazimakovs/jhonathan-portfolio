@@ -179,7 +179,7 @@ const projects: Project[] = [
     description:
       "Conversational AI agent embedded in Slack that answers business data questions in plain English - connecting sales, finance, and pipeline metrics into real-time team insights without dashboards or analyst bottlenecks.",
     longDescription:
-      "Collaborated with Alkemi's internal engineering team as an embedded AI engineer to design and build the agent core and data integration layer for their Slack-native analytics platform. Worked directly with the founder and backend engineers to stabilize existing data connectors, architect the NL-to-query pipeline using LLM function calling, and ship a structured agent layer on top of HubSpot, Snowflake, and BigQuery. Owned the Slack bot end-to-end — from webhook event handling and thread context management to response formatting and permission-aware output. Built and documented the governance layer so the internal team could extend agent coverage to new data sources independently after handoff.",
+      "Collaborated with Alkemi's internal engineering team as an embedded AI engineer to design and build the agent core and data integration layer for their Slack-native analytics platform. Worked directly with the founder and backend engineers to stabilize existing data connectors, architect the NL-to-query pipeline using LLM function calling, and ship a structured agent layer on top of HubSpot, Snowflake, and BigQuery. Owned the Slack bot end-to-end - from webhook event handling and thread context management to response formatting and permission-aware output. Built and documented the governance layer so the internal team could extend agent coverage to new data sources independently after handoff.",
     tech: [
       "Python",
       "Slack Bolt SDK",
@@ -204,7 +204,7 @@ const projects: Project[] = [
     liveUrl: "https://www.alkemi.ai/slack-agent",
     highlights: [
       "Embedded with the internal engineering team to stabilize and extend existing data connectors across HubSpot, Snowflake, and BigQuery",
-      "Owned the full Slack bot lifecycle — webhook handling, thread context, multi-turn conversation, and response formatting via Slack Bolt SDK",
+      "Owned the full Slack bot lifecycle - webhook handling, thread context, multi-turn conversation, and response formatting via Slack Bolt SDK",
       "Designed the NL-to-query pipeline using LLM function calling to produce reliable, grounded answers without hallucinated data",
       "Built a permission and governance layer with audit logging, ensuring all agent responses traced back to verified data sources",
       "Documented agent architecture and data source abstraction layer so the internal team could independently onboard new sources post-handoff",
@@ -221,7 +221,7 @@ const projects: Project[] = [
     description:
       "Suite of AI agents for an OKR tracking platform - automating performance data aggregation, risk identification across goals and KPIs, and weekly accountability coaching for leadership teams.",
     longDescription:
-      "Built the AI agent suite for Brev, an OKR platform where agents replace the manual overhead of tracking execution across teams and tools. The core challenge was fragmented performance data spread across dozens of tools with no unified visibility layer. Engineered agents that continuously pull progress signals from connected sources, identify risks against active goals and KPIs before they surface in leadership reviews, and generate accountability recaps that coach teams toward execution without manual input. Designed the automation layer to eliminate repetitive tracking work — cutting the manual coordination loop that typically costs leadership teams 30+ hours per week — while keeping humans in the loop for decisions that require judgment.",
+      "Built the AI agent suite for Brev, an OKR platform where agents replace the manual overhead of tracking execution across teams and tools. The core challenge was fragmented performance data spread across dozens of tools with no unified visibility layer. Engineered agents that continuously pull progress signals from connected sources, identify risks against active goals and KPIs before they surface in leadership reviews, and generate accountability recaps that coach teams toward execution without manual input. Designed the automation layer to eliminate repetitive tracking work - cutting the manual coordination loop that typically costs leadership teams 30+ hours per week - while keeping humans in the loop for decisions that require judgment.",
     tech: [
       "Python",
       "LLM APIs (OpenAI)",
@@ -259,7 +259,7 @@ const projects: Project[] = [
     description:
       "Multi-tenant sports facility booking platform - Google Calendar OAuth sync across business accounts, Supabase edge function API proxy, online booking with payments, and a full manager dashboard with CRM.",
     longDescription:
-      "Built the Google Calendar integration and backend infrastructure for Pitchbooking, a scheduling and payments platform for sports facilities. The core engineering challenge was establishing and maintaining secure Google OAuth connections across independent facility accounts, storing credentials via a Supabase edge function outbound proxy, and reliably syncing booking events into each facility's calendar without token expiry failures. The manager dashboard handles the full operational lifecycle — daily calendar views, block subscription bookings, priority access windows, Stripe payment reconciliation, invoicing, and role-based access for grounds teams, booking managers, and finance staff. The public-facing booking portal gives customers 24/7 self-service access to find, book, and pay for facilities in real time.",
+      "Built the Google Calendar integration and backend infrastructure for Pitchbooking, a scheduling and payments platform for sports facilities. The core engineering challenge was establishing and maintaining secure Google OAuth connections across independent facility accounts, storing credentials via a Supabase edge function outbound proxy, and reliably syncing booking events into each facility's calendar without token expiry failures. The manager dashboard handles the full operational lifecycle - daily calendar views, block subscription bookings, priority access windows, Stripe payment reconciliation, invoicing, and role-based access for grounds teams, booking managers, and finance staff. The public-facing booking portal gives customers 24/7 self-service access to find, book, and pay for facilities in real time.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -284,7 +284,7 @@ const projects: Project[] = [
     highlights: [
       "Google OAuth 2.0 flow connecting independent facility accounts with secure token storage via Supabase edge functions",
       "Automatic token refresh logic preventing silent OAuth expiry failures across active facility connections",
-      "Full Google Calendar CRUD — booking events created, updated, and deleted across facility and customer calendars in real time",
+      "Full Google Calendar CRUD - booking events created, updated, and deleted across facility and customer calendars in real time",
       "Supabase edge function outbound proxy for authenticated third-party API calls without plaintext credential exposure",
       "Stripe integration supporting online pre-payment, invoicing, offline payments, cancellations, and payment reconciliation",
       "Manager dashboard with daily calendar view, block subscription bookings, priority access windows, and role-based staff permissions",
@@ -857,10 +857,10 @@ function ProjectModal({
         onClick={onClose}
       />
 
-      {/* Modal panel — flex column, no single scroll; each column scrolls independently on lg */}
+      {/* Modal panel - flex column, no single scroll; each column scrolls independently on lg */}
       <div className="relative w-full max-w-6xl max-h-[92vh] bg-card border border-border/60 rounded-2xl shadow-2xl shadow-black/50 z-10 flex flex-col overflow-hidden">
 
-        {/* Header — always pinned at top (parent doesn't scroll) */}
+        {/* Header - always pinned at top (parent doesn't scroll) */}
         <div className="shrink-0 flex items-center justify-between px-6 py-4 border-b border-border/50 bg-card/96 backdrop-blur-sm z-20">
           <div className="flex items-center gap-3 min-w-0">
             <button
@@ -931,10 +931,10 @@ function ProjectModal({
 
         {/* Two-column body
             Mobile: single scroll (overflow-y-auto, columns stacked)
-            Desktop lg: overflow-hidden — each column scrolls independently */}
+            Desktop lg: overflow-hidden - each column scrolls independently */}
         <div className="flex-1 overflow-y-auto lg:overflow-hidden flex flex-col lg:flex-row lg:items-stretch min-h-0">
 
-          {/* LEFT — independent scroll on desktop */}
+          {/* LEFT - independent scroll on desktop */}
           <div className="lg:w-[35%] flex flex-col border-b lg:border-b-0 lg:border-r border-border/40 p-6 gap-6 shrink-0 lg:overflow-y-auto lg:min-h-0">
             <div>
               <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/45 mb-1.5">
@@ -1022,7 +1022,7 @@ function ProjectModal({
             </div>
           </div>
 
-          {/* RIGHT — independent scroll on desktop (images + more projects) */}
+          {/* RIGHT - independent scroll on desktop (images + more projects) */}
           <div className="flex-1 flex flex-col lg:overflow-y-auto lg:min-h-0">
             <div className="p-4 space-y-3">
               {project.images && project.images.length > 0 ? (
